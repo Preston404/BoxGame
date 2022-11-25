@@ -1,20 +1,61 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 using UnityEngine.SceneManagement;
 
 public class DestinationBehaviour : MonoBehaviour
 {
 	GameObject the_circle;
+	GameObject the_arrow;
 	float min_distance = 0.4f;
 	int frame_count = 0;
 	int frames_to_wait = 120; // Time to wait after the circle enters the box.
+	
+	int max_position_x = 10;
+	int max_position_y = 2;
+	int min_position_x = 2;
+	int min_position_y = 0;
+	
+	float arrow_offset_x = 0.15f;
+	float arrow_offset_y = 1.2f;
+	
 	
     // Start is called before the first frame update
     void Start()
     {
         the_circle = GameObject.Find("Circle");
+		the_arrow = GameObject.Find("Arrow");
+		
+		// Generate random x position
+		int x_position = Random.Range(min_position_x, max_position_x+1);
+		if (Random.Range(-100,100) < 0)
+		{
+			x_position *= -1;
+		}
+		transform.position = new Vector3(x_position, 0, 0);
+		
+		the_arrow.transform.position = transform.position;
+		if(x_position < 0)
+		{
+			 the_arrow.transform.position = the_arrow.transform.position - new Vector3(arrow_offset_x,0,0);
+		}
+		else
+		{
+			the_arrow.transform.position = the_arrow.transform.position + new Vector3(arrow_offset_x,0,0);
+			Quaternion target = Quaternion.Euler(0, 180, 0); // Tilt around x,y,z
+            the_arrow.transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * 1000000);
+		}
+		
+		// Generate random y position
+		int y_position = Random.Range(min_position_y, max_position_y+1);
+		if (Random.Range(-100,100) < 0)
+		{
+			y_position *= -1;
+		}
+		transform.position = transform.position + new Vector3(0,y_position,0);
+		
+		the_arrow.transform.position = the_arrow.transform.position + new Vector3(0, y_position + arrow_offset_y, 0);
     }
 
     // Update is called once per frame
