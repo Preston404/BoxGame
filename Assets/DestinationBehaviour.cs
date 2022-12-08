@@ -17,8 +17,8 @@ public class DestinationBehaviour : MonoBehaviour
 	int min_position_x = 2;
 	int min_position_y = 0;
 	
-	float arrow_offset_x = 0.15f;
-	float arrow_offset_y = 1.2f;
+	float arrow_offset_x = 0.0f;
+	float arrow_offset_y = 1.5f;
 	
 	
     // Start is called before the first frame update
@@ -43,8 +43,6 @@ public class DestinationBehaviour : MonoBehaviour
 		else
 		{
 			the_arrow.transform.position = the_arrow.transform.position + new Vector3(arrow_offset_x,0,0);
-			Quaternion target = Quaternion.Euler(0, 180, 0); // Tilt around x,y,z
-            the_arrow.transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * 1000000);
 		}
 		
 		// Generate random y position
