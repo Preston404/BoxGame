@@ -19,6 +19,7 @@ public class CircleBehaviour : MonoBehaviour
 		// Are we off the bottom of the screen?
         if(transform.position.y < -5)
 		{
+			SharedData.Instance.success_count = 0;
 			SceneManager.LoadScene("failure_scene", LoadSceneMode.Single);
 		}
     }

@@ -76,6 +76,7 @@ public class DestinationBehaviour : MonoBehaviour
 		
 		if(frame_count > frames_to_wait)
 		{
+			SharedData.Instance.success_count += 1;
 			SceneManager.LoadScene("play_scene", LoadSceneMode.Single);
 		}
     }
