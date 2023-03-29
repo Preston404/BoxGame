@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class ObstacleGenerator : MonoBehaviour
 {
-	int number_of_obstacles = 0;
-	int starting_y_position = 4;
+	bool first_time = true;
+	int starting_y_position = 5;
 	
 	public GameObject obstacle_prefab;
 	
     // Start is called before the first frame update
     void Start()
     {
-        obstacle_prefab = new GameObject();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(number_of_obstacles < 1)
+        if(first_time || Random.Range(0.0f, 600.0f) < 8)
 		{
 			Vector3 position = new Vector3(
+				Random.Range(-10,10),
 				starting_y_position,
-				Random.Range(-10,10), 
 				0
 			);
 
@@ -32,7 +32,7 @@ public class ObstacleGenerator : MonoBehaviour
 				Quaternion.identity,
 				gameObject.transform
 			);
-			number_of_obstacles += 1;
+			first_time = false;
 		}
     }
 }

@@ -497,7 +497,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Failure
 
-    Press enter to try again or backspace to quit.'
+    Press enter to continue'
 --- !u!222 &1685950809
 CanvasRenderer:
   m_ObjectHideFlags: 0
