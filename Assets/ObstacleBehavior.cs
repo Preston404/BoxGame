@@ -16,7 +16,7 @@ public class ObstacleBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = transform.position + new Vector3(0, -1 * movement_speed);
+
     }
 	
 	private void OnTriggerEnter(Collider other)

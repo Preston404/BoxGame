@@ -18,10 +18,10 @@ public class ObstacleGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(first_time || Random.Range(0.0f, 600.0f) < 8)
+        if(first_time || Random.Range(0.0f, 600.0f) < 9)
 		{
 			Vector3 position = new Vector3(
-				Random.Range(-10,10),
+				Random.Range(-14,14),
 				starting_y_position,
 				0
 			);
