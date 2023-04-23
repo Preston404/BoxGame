@@ -54,6 +54,12 @@ public class DestinationBehaviour : MonoBehaviour
 		transform.position = transform.position + new Vector3(0,y_position,0);
 		
 		the_arrow.transform.position = the_arrow.transform.position + new Vector3(0, y_position + arrow_offset_y, 0);
+		
+		// The failure screen will set the count to -1
+		if(PlayData.Instance.success_count == -1)
+		{
+			PlayData.Instance.success_count = 0;
+		}
     }
 
     // Update is called once per frame
@@ -76,7 +82,7 @@ public class DestinationBehaviour : MonoBehaviour
 		
 		if(frame_count > frames_to_wait)
 		{
-			SharedData.Instance.success_count += 1;
+			PlayData.Instance.success_count += 1;
 			SceneManager.LoadScene("play_scene", LoadSceneMode.Single);
 		}
     }

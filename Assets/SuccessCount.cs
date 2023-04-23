@@ -20,9 +20,9 @@ public class SuccessCount : MonoBehaviour
     void Update()
     {
 		
-		if(SharedData.Instance != null)
+		if(PlayData.Instance != null)
 		{
-			text_mesh_string = SharedData.Instance.success_count.ToString();
+			text_mesh_string = PlayData.Instance.success_count.ToString();
 			the_text_mesh.text = text_mesh_string;
 			move_count += 1;
 		}

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SharedData : MonoBehaviour
+public class PlayData : MonoBehaviour
 {
-    public static SharedData Instance; 
+    public static PlayData Instance; 
 
 	// Number of times the user has gotten the ball into the box
     public int success_count = 0;

@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 491739008}
   - component: {fileID: 491739007}
   m_Layer: 0
-  m_Name: SharedData
+  m_Name: PlayData
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -295,7 +295,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 491739006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77a092e71cd19c843a70f4c728334d9e, type: 3}
+  m_Script: {fileID: 11500000, guid: 08576e9ea953c65408ed2f5358d9aa19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   success_count: 0
